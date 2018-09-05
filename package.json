@@ -8,5 +8,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./bin/server"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
   }
 }
