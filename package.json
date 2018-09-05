@@ -1,0 +1,12 @@
+{
+  "name": "http-server",
+  "version": "1.0.0",
+  "description": "A simple HTTP server for accepting incoming requests",
+  "main": "app.js",
+  "repository": "https://github.com/bostonaholic/http-server",
+  "author": "Matthew Boston",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./bin/server"
+  }
+}
