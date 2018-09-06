@@ -8,42 +8,7 @@ const requestLogger = require('../lib/request_logger');
 router.use(bodyParser.json()); // for parsing application/json
 router.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-router.get('/', function(req, res, next) {
-  requestLogger(req, uuidv1());
-  res.send('OK');
-});
-
-router.post('/', function(req, res, next) {
-  requestLogger(req, uuidv1());
-  res.send('OK');
-});
-
-router.put('/', function(req, res, next) {
-  requestLogger(req, uuidv1());
-  res.send('OK');
-});
-
-router.delete('/', function(req, res, next) {
-  requestLogger(req, uuidv1());
-  res.send('OK');
-});
-
-router.options('/', function(req, res, next) {
-  requestLogger(req, uuidv1());
-  res.send('OK');
-});
-
-router.head('/', function(req, res, next) {
-  requestLogger(req, uuidv1());
-  res.send('OK');
-});
-
-router.trace('/', function(req, res, next) {
-  requestLogger(req, uuidv1());
-  res.send('OK');
-});
-
-router.connect('/', function(req, res, next) {
+router.all('*', function(req, res, next) {
   requestLogger(req, uuidv1());
   res.send('OK');
 });
