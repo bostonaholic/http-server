@@ -1,6 +1,6 @@
-var server = require('express')();
+const server = require('express')();
 
-var index = require('./routes/index');
+const index = require('./routes/index');
 
 server.use('/', index);
 

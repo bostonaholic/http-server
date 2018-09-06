@@ -1,5 +1,5 @@
-var router = require('express').Router();
-var bodyParser = require('body-parser');  // for parsing multipart/form-data
+const router = require('express').Router();
+const bodyParser = require('body-parser');  // for parsing multipart/form-data
 
 const uuidv1 = require('uuid/v1');
 const util = require('util');
@@ -7,13 +7,13 @@ const util = require('util');
 router.use(bodyParser.json()); // for parsing application/json
 router.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-var logger = function(msg, obj) {
+const logger = function(msg, obj) {
   console.log(msg, util.inspect(obj, { showHidden: true,
                                        depth: Infinity,
                                        colors: true }));
 };
 
-var requestLogger = function(req, requestId) {
+const requestLogger = function(req, requestId) {
   const prefix = '[' + requestId + '] ';
 
   console.log(prefix + req.method + ' ' + req.originalUrl);
