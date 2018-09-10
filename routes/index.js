@@ -8,6 +8,13 @@ const requestLogger = require('../lib/request_logger');
 router.use(bodyParser.json()); // for parsing application/json
 router.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+router.all('/status/*', function(req, res, next) {
+  requestLogger(req, uuidv1());
+
+  const status = parseInt(req.originalUrl.replace('/status/', ''));
+  res.status(status).send();
+});
+
 router.all('*', function(req, res, next) {
   requestLogger(req, uuidv1());
   res.send('OK');
