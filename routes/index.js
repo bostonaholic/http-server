@@ -25,7 +25,7 @@ router.all('*', function(req, res, next) {
   requestLogger(req, requestId);
 
   responseLogger(res, requestId);
-  res.send('OK');
+  res.end();
 });
 
 module.exports = router;
