@@ -9,12 +9,12 @@ const responseLogger = require('../lib/response_logger');
 router.use(bodyParser.json()); // for parsing application/json
 router.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-router.all('/status/*', function(req, res, next) {
+router.all('/respondWith/*', function(req, res, next) {
   const requestId = uuidv1();
   requestLogger(req, requestId);
 
-  const status = parseInt(req.originalUrl.replace('/status/', ''));
-  const response = res.status(status);
+  const statusCode = parseInt(req.originalUrl.replace('/respondWith/', ''));
+  const response = res.status(statusCode);
 
   responseLogger(response, requestId);
   response.send();
