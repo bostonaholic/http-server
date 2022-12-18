@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const uuidv1 = require('uuid/v1');
+const { v1: uuidv1 } = require('uuid');
 
 const requestLogger = require('../lib/request_logger');
 const responseLogger = require('../lib/response_logger');
