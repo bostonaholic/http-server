@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-const { v1: uuidv1 } = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 const requestLogger = require('../lib/request_logger');
 const responseLogger = require('../lib/response_logger');
 
 router.all('/respondWith/*', function(req, res, next) {
-  const requestId = uuidv1();
+  const requestId = uuidv4();
   requestLogger(req, requestId);
 
   const statusCode = parseInt(req.originalUrl.replace('/respondWith/', ''));
@@ -18,7 +18,7 @@ router.all('/respondWith/*', function(req, res, next) {
 });
 
 router.all('*', function(req, res, next) {
-  const requestId = uuidv1();
+  const requestId = uuidv4();
   requestLogger(req, requestId);
 
   responseLogger(res, requestId);
