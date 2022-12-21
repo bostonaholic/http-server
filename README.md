@@ -8,10 +8,10 @@ A simple HTTP server for accepting incoming requests
 
 ## Development
 
-Bootstrap the service:
+Set up the service:
 
 ```
-$ ./script/bootstrapp
+$ ./script/setup
 ```
 
 Start the server:
