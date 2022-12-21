@@ -4,7 +4,7 @@ A simple HTTP server for accepting incoming requests
 
 ## Status
 
-[![CircleCI](https://circleci.com/gh/bostonaholic/http-server.svg?style=svg)](https://circleci.com/gh/bostonaholic/http-server)
+[![Node.js CI](https://github.com/bostonaholic/http-server/actions/workflows/node.js.yml/badge.svg)](https://github.com/bostonaholic/http-server/actions/workflows/node.js.yml)
 
 ## Development
 
