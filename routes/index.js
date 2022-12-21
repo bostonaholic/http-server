@@ -12,6 +12,7 @@ router.all("/respondWith/*", function (req, res, next) {
 
   const statusCode = parseInt(req.originalUrl.replace("/respondWith/", ""));
   res.status(statusCode);
+  res.set("X-Request-Id", requestId);
 
   responseLogger(res, requestId);
   res.send();
@@ -22,6 +23,8 @@ router.all("*", function (req, res, next) {
   requestLogger(req, requestId);
 
   responseLogger(res, requestId);
+
+  res.set("X-Request-Id", requestId);
   res.end();
 });
 
