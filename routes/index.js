@@ -11,10 +11,10 @@ router.all("/respondWith/*", function (req, res, next) {
   requestLogger(req, requestId);
 
   const statusCode = parseInt(req.originalUrl.replace("/respondWith/", ""));
-  const response = res.status(statusCode);
+  res.status(statusCode);
 
-  responseLogger(response, requestId);
-  response.send();
+  responseLogger(res, requestId);
+  res.send();
 });
 
 router.all("*", function (req, res, next) {
