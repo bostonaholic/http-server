@@ -14,8 +14,13 @@ router.all("/respondWith/*", function (req, res, next) {
   res.status(statusCode);
   res.set("X-Request-Id", requestId);
 
-  responseLogger(res, requestId);
-  res.send();
+  try {
+    res.send();
+  } catch (error) {
+    res.status(400).send();
+  } finally {
+    responseLogger(res, requestId);
+  }
 });
 
 router.all("*", function (req, res, next) {
