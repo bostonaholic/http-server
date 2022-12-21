@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# script/cibuild: Setup environment for CI to run tests. This is primarily designed to run on the continuous integration server.
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+export NODE_ENV="test"
+
+test -d "/usr/share/nodenv/shims" && {
+    export PATH=/usr/share/nodenv/shims:"$PATH"
+}
+export NODENV_VERSION="1.4.0"
+
+echo "Running tests..."
+date "+%H:%M:%S"
+
+script/test
+
+echo "Tests ended..."
+date "+%H:%M:%S"
