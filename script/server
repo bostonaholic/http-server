@@ -9,6 +9,6 @@ cd "$(dirname "$0")/.."
 script/update
 
 test -z "$NODE_ENV" &&
-    NODE_ENV='development'
+    export NODE_ENV='development'
 
 node bin/www
