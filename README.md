@@ -8,16 +8,16 @@ A simple HTTP server for accepting incoming requests
 
 ## Development
 
-Install dependencies with [yarn](https://yarnpkg.com)
+Bootstrap the service:
 
 ```
-$ yarn install
+$ ./script/bootstrapp
 ```
 
-Start the server listening on [localhost:3000](http://localhost:3000)
+Start the server:
 
 ```
-$ yarn run start
+$ ./script/server
 ```
 
 ## Usage
