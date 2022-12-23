@@ -8,8 +8,8 @@ cd "$(dirname "$0")/.."
 
 export NODE_ENV="test"
 
-test -d "/usr/share/nodenv/shims" && {
-    export PATH=/usr/share/nodenv/shims:"$PATH"
+test -d "$ASDF_DIR/shims" && {
+    export PATH="$ASDF_DIR/shims":"$PATH"
 }
 export NODENV_VERSION="1.4.0"
 
