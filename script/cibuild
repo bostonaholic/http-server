@@ -8,10 +8,9 @@ cd "$(dirname "$0")/.."
 
 export NODE_ENV="test"
 
-test -d "/usr/share/nodenv/shims" && {
-    export PATH=/usr/share/nodenv/shims:"$PATH"
+test -d "$HOME/.asdf/shims" && {
+    export PATH="$HOME/.asdf/shims":"$PATH"
 }
-export NODENV_VERSION="1.4.0"
 
 echo "Running tests..."
 date "+%H:%M:%S"
