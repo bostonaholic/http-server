@@ -13,10 +13,9 @@ if [ -f "Brewfile" ] && [ "$(uname -s)" = "Darwin" ]; then
     }
 fi
 
-if [ -f ".node-version" ] && [ -z "$(nodenv version-name 2>/dev/null)" ]; then
-    echo "==> Installing Nodejs..."
-    nodenv install --skip-existing
-    nodenv rehash
+if [ -f ".tool-versions" ]; then
+    echo "==> Installing tools (with asdf)..."
+    asdf install
 fi
 
 if [ -f "package.json" ]; then
