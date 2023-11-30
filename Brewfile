@@ -1,2 +1,2 @@
-brew 'asdf'
+brew 'nodenv'
 brew 'yarn'
