@@ -19,6 +19,10 @@ if [ -f ".node-version" ] && [ -z "$(nodenv version-name 2>/dev/null)" ]; then
     nodenv rehash
 fi
 
+# TODO: Only install yarn if it doesn't already exist
+echo "==> Installing yarn..."
+npm install -g yarn
+
 if [ -f "package.json" ]; then
     echo "==> Installing npm dependencies (with yarn)..."
     yarn install
