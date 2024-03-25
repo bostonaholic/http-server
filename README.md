@@ -8,6 +8,12 @@ A simple HTTP server for accepting incoming requests
 
 ## Development
 
+Create local environment file:
+
+```
+$ cp .env.sample .env
+```
+
 Set up the service:
 
 ```
