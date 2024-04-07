@@ -31,7 +31,7 @@ $ ./script/server
 The `/` route will return a [200 OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) response.
 
 ```
-➜  ~ curl -I http://localhost:3000
+➜  ~ curl -I http://127.0.0.1:3000
 HTTP/1.1 200 OK
 X-Powered-By: Express
 X-Request-Id: c30eb231-ad27-4bac-a8ac-68f2810ba491
@@ -43,7 +43,7 @@ Keep-Alive: timeout=5
 The `/respondWith/*` route will return whichever status code you pass. For example, `/respondWith/418` will return a [418 I'm a teapot](https://tools.ietf.org/html/rfc2324#section-2.3.2) response.
 
 ```
-➜  ~ curl -I http://localhost:3000/respondWith/418
+➜  ~ curl -I http://127.0.0.1:3000/respondWith/418
 HTTP/1.1 418 I'm a Teapot
 X-Powered-By: Express
 X-Request-Id: ee15ee05-ff42-4dcd-8d3f-9504218c9ca9
@@ -55,7 +55,7 @@ Keep-Alive: timeout=5
 All HTTP methods are supported.
 
 ```
-➜  ~ curl -I -X POST http://localhost:3000/respondWith/201
+➜  ~ curl -I -X POST http://127.0.0.1:3000/respondWith/201
 HTTP/1.1 201 Created
 X-Powered-By: Express
 X-Request-Id: 8eaf6a94-bd3a-4a35-8647-ce8d7b039914
